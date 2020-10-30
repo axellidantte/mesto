@@ -21,6 +21,7 @@ function submitForm(event) {
     event.preventDefault();
     profileTitle.textContent = titleField.value;
     profileSubtitle.textContent = subtitleField.value;
+    closePopup()
 }
 
 editButton.addEventListener('click', showPopup);

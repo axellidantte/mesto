@@ -4,8 +4,8 @@
     padding: 0;
     transform: rotate(45deg);
     position: absolute;
-    top: -48px;
-    right: -48px;
+    top: -30px;
+    right: -30px;
     outline: none;
 }
 
@@ -15,6 +15,6 @@
 
 @media screen and (max-width:767px) {
     .pop-up__exit-button {
-        right: -0px;
+        right: 0;
     }
 }
