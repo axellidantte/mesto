@@ -7,68 +7,69 @@
   <title>Mesto</title>
 </head>
 <body class="page">
-      <header class="header">
-          <img class="header__logo" src="./images/header__logo.svg" alt="Логотип Mesto Russia">
-      </header>
-      <main class="main">
-          <section class="profile">
-              <img class='profile__avatar' src="./images/profile__avatar.jpg" alt="Фото Жак-Ив">
-              <div class="profile__info">
-                  <h1 class="profile__title">Жак-Ив Кусто</h1>
-                  <button type="button" class='profile__edit-button'><img src="./images/profile__info-edit-button-logo.png" alt="Кнопка редактировать профиль"></button>
-                  <p class="profile__subtitle">Исследователь океана</p>
-              </div>
-              <button type="button" class='profile__add-button'><img src="./images/profile__add-button.png" alt="Кнопка добавить профиль"></button>
-          </section>
-          <section class="elements">
-              <div class="elements__cards">
-                  <div class="elements__card">
-                      <img class='elements__card-image' src="./images/elements__karachevsk.jpg" alt="Фото Карачевск">
-                      <h2 class="elements__title">Карачевск</h2>
-                      <button type="button" class="elements__like-button"><img class="elements__like-button-pic" src="./images/elements__like-button.svg" alt="Кнопка нравится"></button>
-                  </div>
-                  <div class="elements__card">
-                    <img class='elements__card-image' src="./images/elements__elbrus.png" alt="Фото Эльбрус">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <button type="button" class="elements__like-button"><img class="elements__like-button-pic" src="./images/elements__like-button.svg" alt="Кнопка нравится"></button>
-                </div>
-                <div class="elements__card">
-                    <img class='elements__card-image' src="./images/elements__dombay.png" alt="Домбай">
-                    <h2 class="elements__title">Домбай</h2>
-                    <button type="button" class="elements__like-button"><img class="elements__like-button-pic" src="./images/elements__like-button.svg" alt="Кнопка нравится"></button>
-                </div>
-                <div class="elements__card">
-                    <img class='elements__card-image' src="./images/elements__elbrus.png" alt="Фото Эльбрус">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <button type="button" class="elements__like-button"><img class="elements__like-button-pic" src="./images/elements__like-button.svg" alt="Кнопка нравится"></button>
-                </div>
-                <div class="elements__card">
-                    <img class='elements__card-image' src="./images/elements__dombay.png" alt="Домбай">
-                    <h2 class="elements__title">Домбай</h2>
-                    <button type="button" class="elements__like-button"><img class="elements__like-button-pic" src="./images/elements__like-button.svg" alt="Кнопка нравится"></button>
-                </div>
-                <div class="elements__card">
-                    <img class='elements__card-image' src="./images/elements__karachevsk.jpg" alt="Фото Карачаево-Черкессия">
-                    <h2 class="elements__title">Карачаево-Черкессия</h2>
-                    <button type="button" class="elements__like-button"><img class="elements__like-button-pic" src="./images/elements__like-button.svg" alt="Кнопка нравится"></button>
-                </div>
-              </div>
-          </section>
-      </main>
-      <footer class="footer">
-          <p class="footer__copyright">© 2020 Mesto Russia</p>
-      </footer>
-      <div class="pop-up"> 
+    <header class="header">
+        <img class="header__logo" src="./images/header__logo.svg" alt="Логотип Mesto Russia">
+    </header>
+    <main class="main">
+        <section class="profile">
+            <img class="profile__avatar" src="./images/profile__avatar.jpg" alt="Фото Жак-Ив">
+            <div class="profile__info">
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <button type="button" class="profile__edit-button"><img src="./images/profile__info-edit-button-logo.png" alt="Кнопка редактировать профиль"></button>
+                <p class="profile__subtitle">Исследователь океана</p>
+            </div>
+            <button type="button" class="profile__add-button"><img src="./images/profile__add-button.png" alt="Кнопка добавить профиль"></button>
+        </section>
+        <section class="elements">
+            <div class="elements__cards">
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">© 2020 Mesto Russia</p>
+    </footer>
+
+    <div class="pop-up pop-up_profile"> 
         <div class="pop-up__content">
-            <h3 class="pop-up__title">Редактировать профиль</h3>
+            <h2 class="pop-up__title">Редактировать профиль</h2>
             <form class="pop-up__form">
-                <input class="pop-up__input pop-up__input_type_title" type="text">
-                <input class="pop-up__input pop-up__input_type_subtitle" type="text">
+                <input class="pop-up__input pop-up__input_edit-title" type="text">
+                <input class="pop-up__input pop-up__input_edit-subtitle" type="text">
                 <button type="submit" class="pop-up__button">Сохранить</button>
             </form>
-            <button type="button" class="pop-up__exit-button"><img class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png" alt=""></button>
+            <button type="button" class="pop-up__exit-button pop-up__exit-button_edit"><img class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png" alt=""></button>
         </div>
-      </div>
-      <script src="./scripts/index.js"></script>
+    </div>
+
+    <div class="pop-up pop-up_cards"> 
+        <div class="pop-up__content">
+            <h2 class="pop-up__title">Новое место</h2>
+            <form class="pop-up__form pop-up__form_add">
+                <input class="pop-up__input pop-up__input_add-title" type="text" placeholder="Название">
+                <input class="pop-up__input pop-up__input_add-link" type="text" placeholder="Ссылка на картинку">
+                <button type="submit" class="pop-up__button">Создать</button>
+            </form>
+            <button type="button" class="pop-up__exit-button pop-up__exit-button_add"><img class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png" alt=""></button>
+        </div>
+    </div>
+    
+    <div class="pop-up-img">
+        <div class="pop-up-img__content">
+          <img class="pop-up-img__big-img" src="" alt="">
+          <p class="pop-up-img__title"></p>
+          <button class="pop-up-img__close"></button>
+        </div>
+    </div>
+
+    <template class="cards-template">
+        <div class="elements__card">
+            <img class="elements__card-image" src="">
+            <button type="button" class="elements__delete-button"></button>
+            <h2 class="elements__title"></h2>
+            <button type="button" class="elements__like-button"></button>
+        </div>
+    </template>
+
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

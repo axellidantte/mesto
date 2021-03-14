@@ -18,12 +18,19 @@
 @import url(../blocks/elements/__cards/elements__cards.css);
 @import url(../blocks/elements/__card/elements__card.css);
 @import url(../blocks/elements/__card-image/elements__card-image.css);
+@import url(../blocks/elements/__delete-button/elements__delete-button.css);
 @import url(../blocks/elements/__title/elements__title.css);
 @import url(../blocks/elements/__like-button/elements__like-button.css);
-@import url(../blocks/elements/__like-button-pic/elements__like-button-pic.css);
+@import url(../blocks/elements/__like-button_active/elements__like-button_active.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
+
+@import url(../blocks/pop-up-img/pop-up-img.css);
+@import url(../blocks/pop-up-img/__big-img/pop-up-img__big-img.css);
+@import url(../blocks/pop-up-img/__close/pop-up-img__close.css);
+@import url(../blocks/pop-up-img/__content/pop-up-img__content.css);
+@import url(../blocks/pop-up-img/__title/pop-up-img__title.css);
 
 @import url(../blocks/pop-up/pop-up.css);
 @import url(../blocks/pop-up/_opened/pop-up_opened.css);
@@ -34,3 +41,5 @@
 @import url(../blocks/pop-up/__button/pop-up__button.css);
 @import url(../blocks/pop-up/__exit-button/pop-up__exit-button.css);
 @import url(../blocks/pop-up/__exit-button-pic/pop-up__exit-button-pic.css);
+@import url(../blocks/pop-up-img/pop-up-img.css);
+
