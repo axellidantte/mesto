@@ -1,4 +1,4 @@
-.profile__info {
+/* .profile__info {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,5 +11,20 @@
         margin: 0;
         justify-content: center;
         align-items: center;
+    }
+} */
+
+
+
+.profile__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .profile__info {
+        flex-direction: row;
+        width: 100%;
     }
 }

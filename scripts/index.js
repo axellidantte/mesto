@@ -75,6 +75,7 @@ function createCardsDomNode(item) {
   const cardsImage = newItem.querySelector('.elements__card-image');
   cardsTitle.textContent = item.name;
   cardsImage.src = item.link;
+  cardsImage.alt = item.name;
   const buttonLike = newItem.querySelector('.elements__like-button');
   buttonLike.addEventListener('click', function(evt){
     evt.target.classList.toggle('elements__like-button_active');
@@ -95,10 +96,6 @@ popupEditCloseButton.addEventListener("click", function() {
 
 popupAddCloseButton.addEventListener('click', function() {
   togglePopup(popupCards);
-});
-
-popupImgClose.addEventListener('click', function(){
-  togglePopup(popupImg);
 });
 
 function submitEditForm(evt) {
