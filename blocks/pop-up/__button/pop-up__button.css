@@ -1,11 +1,11 @@
 .pop-up__button {
-    background-color: #000000;
-    border: none;
     color: #FFFFFF;
+    background-color: black;
     width: 100%;
     min-height: 50px;
-    margin: 0 auto;
+    margin: 16px auto 0;
     padding: 0;
+
 }
 
 .pop-up__button:hover {

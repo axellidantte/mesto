@@ -43,3 +43,7 @@
 @import url(../blocks/pop-up/__button/pop-up__button.css);
 @import url(../blocks/pop-up/__exit-button/pop-up__exit-button.css);
 @import url(../blocks/pop-up/__exit-button-pic/pop-up__exit-button-pic.css);
+@import url(../blocks/pop-up/__error/pop-up__error.css);
+@import url(../blocks/pop-up/__error/_visible/pop-up__error_visible.css);
+@import url(../blocks/pop-up/__input/_type/pop-up__input_type_error.css);
+@import url(../blocks/pop-up/__button/_disabled/pop-up__button_disabled.css);

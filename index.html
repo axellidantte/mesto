@@ -36,10 +36,12 @@
     <div class="pop-up pop-up_profile"> 
         <div class="pop-up__content">
             <h2 class="pop-up__title">Редактировать профиль</h2>
-            <form class="pop-up__form">
-                <input class="pop-up__input pop-up__input_edit-title" type="text">
-                <input class="pop-up__input pop-up__input_edit-subtitle" type="text">
-                <button type="submit" class="pop-up__button">Сохранить</button>
+            <form novalidate class="pop-up__form" name="profile">
+                <input id="input-profile-title" class="pop-up__input" type="text" placeholder="Имя" required minlength="2" maxlength="40">
+                <span id="input-profile-title-error" class="pop-up__error"></span>
+                <input id="input-profile-subtitle" class="pop-up__input" type="text" placeholder="О себе" required minlength="2" maxlength="200">
+                <span id="input-profile-subtitle-error" class="pop-up__error"></span>
+                <button type="submit" class="pop-up__profile__button pop-up__button">Сохранить</button>
             </form>
             <button type="button" class="pop-up__exit-button pop-up__exit-button_edit"><img class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png" alt="кнопка закрытия"></button>
         </div>
@@ -48,10 +50,12 @@
     <div class="pop-up pop-up_cards"> 
         <div class="pop-up__content">
             <h2 class="pop-up__title">Новое место</h2>
-            <form class="pop-up__form pop-up__form_add">
-                <input class="pop-up__input pop-up__input_add-title" type="text" placeholder="Название">
-                <input class="pop-up__input pop-up__input_add-link" type="text" placeholder="Ссылка на картинку">
-                <button type="submit" class="pop-up__button">Создать</button>
+            <form novalidate class="pop-up__form pop-up__form_add">
+                <input id="popup-add-title" class="pop-up__input" action="index.html" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+                <span id="popup-add-title-error" class="pop-up__error"></span>
+                <input id="popup-add-link" class="pop-up__input" type="url" placeholder="Ссылка на картинку" required>
+                <span id="popup-add-link-error" class="pop-up__error"></span>
+                <button type="submit" id="pop-up_cards__button" class="pop-up__button">Создать</button>
             </form>
             <button type="button" class="pop-up__exit-button pop-up__exit-button_add"><img class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png" alt="кнопка закрытия"></button>
         </div>
@@ -75,5 +79,6 @@
     </template>
     <script src="./scripts/initial-сards.js"></script>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>
