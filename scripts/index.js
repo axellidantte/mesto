@@ -21,12 +21,14 @@ const popupImg = document.querySelector(".pop-up-img");
 const imgInPopupImg = document.querySelector(".pop-up-img__big-img");
 const titlePopupImg = document.querySelector(".pop-up-img__title");
 const popupImgClose = document.querySelector(".pop-up-img__close");
+const popups = document.querySelectorAll(".pop-up");
 renderCards();
 editButton.addEventListener("click", openPopupEdit);
 popupForm.addEventListener("submit", submitEditForm);
 
 addButton.addEventListener("click", function () {
   openPopup(popupCards);
+  refreshValidationInput(validationConfig);
 });
 
 
@@ -55,17 +57,19 @@ function closeByEscape(event) {
     event.preventDefault()
   }
 }
+
 function openPopup(popup) {
-  popup.classList.add("pop-up_opened")
-  document.addEventListener("keydown", closeByEscape)
+  popup.classList.add("pop-up_opened");
+  document.addEventListener("keydown", closeByEscape);
 }
+
 function closePopup(popup) {
   popup.classList.remove("pop-up_opened");
   document.removeEventListener("keydown", closeByEscape);
+  formAdd.reset();
 }
 
 function closeOver(event) {
-  const popups = document.querySelectorAll(".pop-up")
   popups.forEach((popup) => {
     popup.addEventListener("click", (evt) => {
       if (evt.target.classList.contains("pop-up_opened")) {
@@ -86,6 +90,7 @@ function openImg(evt) {
 function openPopupEdit(evt) {
   titleFieldEdit.value = profileTitle.textContent;
   subtitleFieldEdit.value = profileSubtitle.textContent;
+  refreshValidationInput(validationConfig);
   popupEditSaveButton.classList.remove("pop-up__button_disabled")
   popupEditSaveButton.removeAttribute("disabled")
   openPopup(popupProfile);
@@ -99,14 +104,14 @@ function createCardsDomNode(item) {
   cardsImage.src = item.link;
   cardsImage.alt = item.name;
   const buttonLike = newItem.querySelector(".elements__like-button");
-  buttonLike.addEventListener("click", createLike);
+  buttonLike.addEventListener("click", toggleLike);
   const buttonDelete = newItem.querySelector(".elements__delete-button");
   buttonDelete.addEventListener("click", deleteLike);
   cardsImage.addEventListener("click", openImg);
   return newItem;
 }
 
-function createLike(evt) {
+function toggleLike(evt) {
   evt.target.classList.toggle("elements__like-button_active");
 }
 
@@ -132,7 +137,8 @@ function submitAddForm(evt) {
   const addCard = createCardsDomNode({ name: titleFieldAdd.value, link: linkFieldAdd.value });
   container.prepend(addCard);
   closePopup(popupCards);
+  formAdd.reset();
   popupAddSaveButton.classList.add("pop-up__button_disabled");
   popupAddSaveButton.setAttribute("disabled", true);
-  formAdd.reset();
 }
+
