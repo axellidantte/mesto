@@ -137,7 +137,6 @@ function submitAddForm(evt) {
   const addCard = createCardsDomNode({ name: titleFieldAdd.value, link: linkFieldAdd.value });
   container.prepend(addCard);
   closePopup(popupCards);
-  formAdd.reset();
   popupAddSaveButton.classList.add("pop-up__button_disabled");
   popupAddSaveButton.setAttribute("disabled", true);
 }
