@@ -28,6 +28,7 @@ popupForm.addEventListener("submit", submitEditForm);
 
 addButton.addEventListener("click", function () {
   openPopup(popupCards);
+  formAdd.reset();
   refreshValidationInput(validationConfig);
 });
 
@@ -66,7 +67,6 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove("pop-up_opened");
   document.removeEventListener("keydown", closeByEscape);
-  formAdd.reset();
 }
 
 function closeOver(event) {
