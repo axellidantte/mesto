@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
-  <title>Mesto</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto</title>
 </head>
+
 <body class="page">
     <header class="header">
         <img class="header__logo" src="./images/header__logo.svg" alt="Логотип Mesto Russia">
@@ -17,11 +19,14 @@
                 <div class="profile__info-left-column">
                     <div class="profile__info-name">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
-                        <button type="button" class="profile__edit-button"><img src="./images/profile__info-edit-button-logo.png" alt="Кнопка редактировать профиль"></button>
+                        <button type="button" class="profile__edit-button"><img
+                                src="./images/profile__info-edit-button-logo.png"
+                                alt="Кнопка редактировать профиль"></button>
                     </div>
                     <p class="profile__subtitle">Исследователь океана</p>
                 </div>
-                <button type="button" class="profile__add-button"><img src="./images/profile__add-button.png" alt="Кнопка добавить профиль"></button>
+                <button type="button" class="profile__add-button"><img src="./images/profile__add-button.png"
+                        alt="Кнопка добавить профиль"></button>
             </div>
         </section>
         <section class="elements">
@@ -33,43 +38,50 @@
         <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
 
-    <div class="pop-up pop-up_profile"> 
+    <div class="pop-up pop-up_profile">
         <div class="pop-up__content">
             <h2 class="pop-up__title">Редактировать профиль</h2>
-            <form novalidate class="pop-up__form" name="profile">
-                <input id="input-profile-title" class="pop-up__input" type="text" placeholder="Имя" required minlength="2" maxlength="40">
+            <form novalidate class="pop-up__form pop-up__form_edit" name="profile">
+                <input id="input-profile-title" class="pop-up__input" type="text" placeholder="Имя" required
+                    minlength="2" maxlength="40">
                 <span id="input-profile-title-error" class="pop-up__error"></span>
-                <input id="input-profile-subtitle" class="pop-up__input" type="text" placeholder="О себе" required minlength="2" maxlength="200">
+                <input id="input-profile-subtitle" class="pop-up__input" type="text" placeholder="О себе" required
+                    minlength="2" maxlength="200">
                 <span id="input-profile-subtitle-error" class="pop-up__error"></span>
                 <button type="submit" class="pop-up__button pop-up__button_profile">Сохранить</button>
             </form>
-            <button type="button" class="pop-up__exit-button pop-up__exit-button_edit"><img class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png" alt="кнопка закрытия"></button>
+            <button type="button" class="pop-up__exit-button pop-up__exit-button_edit"><img
+                    class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png"
+                    alt="кнопка закрытия"></button>
         </div>
     </div>
 
-    <div class="pop-up pop-up_cards"> 
+    <div class="pop-up pop-up_cards">
         <div class="pop-up__content">
             <h2 class="pop-up__title">Новое место</h2>
             <form novalidate class="pop-up__form pop-up__form_add">
-                <input id="popup-add-title" class="pop-up__input" action="index.html" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+                <input id="popup-add-title" class="pop-up__input" action="index.html" type="text" placeholder="Название"
+                    minlength="2" maxlength="30" required>
                 <span id="popup-add-title-error" class="pop-up__error"></span>
                 <input id="popup-add-link" class="pop-up__input" type="url" placeholder="Ссылка на картинку" required>
                 <span id="popup-add-link-error" class="pop-up__error"></span>
                 <button type="submit" id="pop-up_cards__button" class="pop-up__button">Создать</button>
             </form>
-            <button type="button" class="pop-up__exit-button pop-up__exit-button_add"><img class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png" alt="кнопка закрытия"></button>
-        </div>
-    </div>
-    
-    <div class="pop-up pop-up-img">
-        <div class="pop-up-img__content">
-          <img class="pop-up-img__big-img" alt="Развернутое Фото" src="#">
-          <p class="pop-up-img__title"></p>
-          <button class="pop-up-img__close"></button>
+            <button type="button" class="pop-up__exit-button pop-up__exit-button_add"><img
+                    class="pop-up__exit-button-pic" src="./images/profile__pop-up-exit-button.png"
+                    alt="кнопка закрытия"></button>
         </div>
     </div>
 
-    <template class="cards-template">
+    <div class="pop-up pop-up-img">
+        <div class="pop-up-img__content">
+            <img class="pop-up-img__big-img" alt="Развернутое Фото" src="#">
+            <p class="pop-up-img__title"></p>
+            <button class="pop-up-img__close"></button>
+        </div>
+    </div>
+
+    <template class="cards-template" id="cards-template">
         <div class="elements__card">
             <img class="elements__card-image">
             <button type="button" class="elements__delete-button"></button>
@@ -77,8 +89,7 @@
             <button type="button" class="elements__like-button"></button>
         </div>
     </template>
-    <script src="./scripts/initial-сards.js"></script>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
+
 </html>
