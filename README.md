@@ -17,4 +17,4 @@
 
 **Ссылка на проект**
 
-https://axellidantte.github.io/mesto/
+https://axellidantte.github.io/mesto/index.html
