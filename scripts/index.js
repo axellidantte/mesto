@@ -146,7 +146,7 @@ function renderCards() {
 renderCards();
 
 function handleCardClick(link, name) {
-  openPopup(popupPic);
+  openPopup(popupImg);
 
   imgInPopupImg.src = link;
   imgInPopupImg.alt = name;
