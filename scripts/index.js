@@ -1,33 +1,6 @@
+import { initialCards } from "./initial-сards.js"
 import { formValidator } from "./FormValidator.js";
 import { Card } from "./Card.js";
-
-
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg"
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg"
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg"
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg"
-  }
-];
 
 const validationConfig = {
   formSelector: ".pop-up__form",
@@ -44,13 +17,8 @@ const popupProfile = document.querySelector(".pop-up_profile");
 const popupCards = document.querySelector(".pop-up_cards");
 const popupEditCloseButton = document.querySelector(".pop-up__exit-button_edit");
 const popupAddCloseButton = document.querySelector(".pop-up__exit-button_add");
-// const popupEditSaveButton = document.querySelector(".pop-up__button_profile");
-// const popupAddSaveButton = document.getElementById("pop-up_cards__button");
 const editButton = document.querySelector(".profile__edit-button");
-// const elementsCards = document.querySelector(".elements__cards");
 const addButton = document.querySelector(".profile__add-button");
-// const cardsTemplate = document.querySelector(".cards-template").content;
-// const popupForm = document.querySelector(".pop-up__form");
 const container = document.querySelector(".elements__cards");
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
@@ -59,7 +27,7 @@ const subtitleFieldEdit = document.getElementById("input-profile-subtitle");
 const titleFieldAdd = document.getElementById("popup-add-title");
 const linkFieldAdd = document.getElementById("popup-add-link");
 const formAdd = document.querySelector(".pop-up__form_add");
-const formEdit = document.querySelector('.pop-up__form_edit');
+const formEdit = document.querySelector(".pop-up__form_edit");
 const popupImg = document.querySelector(".pop-up-img");
 const imgInPopupImg = document.querySelector(".pop-up-img__big-img");
 const titlePopupImg = document.querySelector(".pop-up-img__title");
@@ -100,7 +68,7 @@ function closeByEscape(event) {
   }
 }
 
-function closeOver(event) {
+function closePopupsByOverlay(event) {
   popups.forEach((popup) => {
     popup.addEventListener("click", (evt) => {
       if (evt.target.classList.contains("pop-up_opened")) {
@@ -124,26 +92,27 @@ function submitEditForm(evt) {
 
 function submitAddForm(evt) {
   evt.preventDefault();
-  const addCard = createCard({ name: titleFieldAdd.value, link: linkFieldAdd.value });
+  const card = createCard({ name: titleFieldAdd.value, link: linkFieldAdd.value });
 
-  container.prepend(addCard);
+  container.prepend(card);
   closePopup(popupCards);
   formAdd.reset();
 }
 
 function createCard(item) {
-  const card = new Card(item, "#cards-template", handleCardClick);
+  const cardsTemplate = "#cards-template" ;
+  const card = new Card(item, cardsTemplate, handleCardClick);
   const cardElement = card.generateCard();
 
   return cardElement;
 }
 
-function renderCards() {
+function renderInitialCards() {
   const newCards = initialCards.map(createCard);
   container.append(...newCards);
 }
 
-renderCards();
+renderInitialCards();
 
 function handleCardClick(link, name) {
   openPopup(popupImg);
@@ -155,7 +124,7 @@ function handleCardClick(link, name) {
 
 formAdd.addEventListener("submit", submitAddForm);
 editButton.addEventListener("click", openPopupEdit);
-addButton.addEventListener('click', openPopupAdd);
+addButton.addEventListener("click", openPopupAdd);
 popupAddCloseButton.addEventListener("click", function () {
   closePopup(popupCards);
 });
@@ -167,4 +136,4 @@ popupEditCloseButton.addEventListener("click", function () {
 });
 formEdit.addEventListener("submit", submitEditForm);
 
-closeOver();
+closePopupsByOverlay();
