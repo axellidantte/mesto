@@ -33,6 +33,7 @@ const imgInPopupImg = document.querySelector(".pop-up-img__big-img");
 const titlePopupImg = document.querySelector(".pop-up-img__title");
 const popupImgClose = document.querySelector(".pop-up-img__close");
 const popups = document.querySelectorAll(".pop-up");
+const cardsTemplate = "#cards-template";
 
 const formEditValidator = new formValidator(validationConfig, formEdit);
 formEditValidator.enableValidation();
@@ -100,7 +101,6 @@ function submitAddForm(evt) {
 }
 
 function createCard(item) {
-  const cardsTemplate = "#cards-template" ;
   const card = new Card(item, cardsTemplate, handleCardClick);
   const cardElement = card.generateCard();
 
