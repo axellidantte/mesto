@@ -1,5 +1,5 @@
 import { initialCards } from "./initial-сards.js"
-import { formValidator } from "./FormValidator.js";
+import { FormValidator } from "./FormValidator.js";
 import { Card } from "./Card.js";
 
 const validationConfig = {
@@ -35,9 +35,9 @@ const popupImgClose = document.querySelector(".pop-up-img__close");
 const popups = document.querySelectorAll(".pop-up");
 const cardsTemplate = "#cards-template";
 
-const formEditValidator = new formValidator(validationConfig, formEdit);
+const formEditValidator = new FormValidator(validationConfig, formEdit);
 formEditValidator.enableValidation();
-const formAddValidator = new formValidator(validationConfig, formAdd);
+const formAddValidator = new FormValidator(validationConfig, formAdd);
 formAddValidator.enableValidation();
 
 
