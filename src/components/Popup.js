@@ -13,16 +13,13 @@ export class Popup {
     }
     _handleEscClose(evt) {
         if (evt.key === 'Escape') {
-            this.close(this._popup);
+            this.close();
         }
     }
     setEventListeners() {
         this._popup.addEventListener("click", (evt) => {
-            if (evt.target.classList.contains("pop-up_opened")) {
-                this.close(this._popup);
-            }
-            if (evt.target.classList.contains('pop-up__exit-button')) {
-                this.close(this._popup);
+            if (evt.target.classList.contains("pop-up_opened")|| evt.target.classList.contains('pop-up__exit-button')) {
+                this.close();
             }
         });
     }

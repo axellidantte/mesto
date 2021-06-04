@@ -3,25 +3,19 @@ import {
   validationConfig,
   popupProfile,
   popupCards,
-  popupEditCloseButton,
-  popupAddCloseButton,
   editButton,
   addButton,
-  container,
   profileTitle,
   profileSubtitle,
   titleFieldEdit,
   subtitleFieldEdit,
-  titleFieldAdd,
-  linkFieldAdd,
   popupImg,
   imgInPopupImg,
   titlePopupImg,
-  popupImgClose,
-  popups,
   cardsTemplate,
   formAdd,
-  formEdit
+  formEdit,
+  container
 } from "../utils/consts.js";
 import { initialCards } from "../utils/initial-сards.js"
 import { FormValidator } from "../components/FormValidator.js";
@@ -44,7 +38,7 @@ const popupAddForm = new PopupWithForm(popupCards, {
   submitHandler: (data) => {
     const element = createCard({
       name: data.place,
-      link: data.URL
+      link: data.url
     })
     renderList.addNewItem(element);
     popupAddForm.close();
@@ -87,7 +81,7 @@ const renderList = new Section({
     const cardElement = createCard(item);
     renderList.addItem(cardElement);
   }
-}, '.elements__cards'
+}, container
 );
 
 renderList.renderItems();
