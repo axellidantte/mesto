@@ -6,6 +6,7 @@
     padding: 10px 9px 10px 9px;
     right: 15px;
     top: 18px;
+    visibility: hidden;
 }
 
 .elements__delete-button:hover {
